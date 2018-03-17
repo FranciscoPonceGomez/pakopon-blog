@@ -65,7 +65,7 @@ const TemplateWrapper = ({ children }) => (
                 />
                 <Sidebar
                   title="About author"
-                  description="I am a Full-stack Web Developer specializing in Artificial Intelligence"
+                  description="I am a Software Engineer specializing in Artificial Intelligence"
                 />
               </div>
             </div>

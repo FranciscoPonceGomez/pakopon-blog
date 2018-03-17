@@ -7,7 +7,7 @@ export default function Template({
   const post = data.markdownRemark; 
   return (
     <div className="blog-post-container">
-     <Helmet title={`CodeStack - ${post.frontmatter.title}`} />
+     <Helmet title={`Pakopon - ${post.frontmatter.title}`} />
       <div className="blog-post">
         <h1>{post.frontmatter.title}</h1>
         <div
@@ -18,3 +18,17 @@ export default function Template({
     </div>
   );
 }
+
+export const pageQuery = graphql`
+  query BlogPostByPath($path: String!) {
+    markdownRemark(frontmatter: { path: { eq: $path } }) {
+      html
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        path
+        title
+      }
+    }
+  }
+`
+;
